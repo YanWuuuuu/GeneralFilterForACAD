@@ -1,0 +1,63 @@
+<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+	<PropertyGroup>
+		<TargetFrameworks>net35;net40;net45</TargetFrameworks>
+		<Nullable>enable</Nullable>
+		<EnableNETAnalyzers>true</EnableNETAnalyzers>
+		<UseWPF>true</UseWPF>
+		<UseWindowsForms>true</UseWindowsForms>
+		<LangVersion>preview</LangVersion>
+		<AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+		
+	</PropertyGroup>
+
+	<ItemGroup Condition="'$(TargetFramework)' == 'NET35'">
+		<PackageReference Include="Autocad.NetApi" Version="17.2.0">
+			<ExcludeAssets>runtime</ExcludeAssets>
+		</PackageReference>
+	</ItemGroup>
+	<ItemGroup Condition="'$(TargetFramework)' == 'NET40'">
+		<PackageReference Include="Autocad.NetApi" Version="19.0.0">
+			<ExcludeAssets>runtime</ExcludeAssets>
+		</PackageReference>
+	</ItemGroup>
+	<ItemGroup Condition="'$(TargetFramework)' == 'NET45'">
+		<PackageReference Include="AutoCAD.NET" Version="20.0.1">
+			<ExcludeAssets>runtime</ExcludeAssets>
+		</PackageReference>
+		<PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+		<PackageReference Include="System.Collections" Version="4.3.0" />
+	</ItemGroup>
+	<ItemGroup>
+	  <PackageReference Include="IFox.Basal.Source" Version="0.5.2.4">
+	    <PrivateAssets>all</PrivateAssets>
+	    <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+	  </PackageReference>
+	  <PackageReference Include="IFox.CAD.Source" Version="0.5.2.4">
+	    <PrivateAssets>all</PrivateAssets>
+	    <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+	  </PackageReference>
+
+	</ItemGroup>
+
+
+	<PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+		<DefineConstants>DEBUG</DefineConstants>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(TargetFramework)' == 'NET35'">
+		<DefineConstants>$(Configuration);acad;ac2009</DefineConstants>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(TargetFramework)' == 'NET40'">
+		<DefineConstants>$(Configuration);acad;ac2013</DefineConstants>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(TargetFramework)' == 'NET45'">
+		<DefineConstants>$(Configuration);acad;ac2015</DefineConstants>
+	</PropertyGroup>
+	
+	<ItemGroup>
+		<Reference Include="System.Web" />
+		<Reference Include="System.Web.Extensions" />
+	</ItemGroup>
+
+</Project>
+
