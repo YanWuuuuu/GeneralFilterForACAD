@@ -1,0 +1,15 @@
+{
+  "profiles": {
+    "GeneralFilterForACAD": {
+      "commandName": "Project"
+    },
+    "CAD2018": {
+      "commandName": "Executable",
+      "executablePath": "C:\\Program Files\\Autodesk\\AutoCAD 2018\\acad.exe"
+    },
+    "CAD2024": {
+      "commandName": "Executable",
+      "executablePath": "C:\\Program Files\\Autodesk\\AutoCAD 2024\\acad.exe"
+    }
+  }
+}
