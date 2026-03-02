@@ -1,7 +1,8 @@
 {
   "profiles": {
     "GeneralFilterForACAD": {
-      "commandName": "Project"
+      "commandName": "Project",
+      "remoteDebugEnabled": false
     },
     "CAD2018": {
       "commandName": "Executable",
